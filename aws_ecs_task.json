@@ -14,10 +14,7 @@
             "awslogs-stream-prefix": "ecs"
           }
         },
-        "entryPoint": [
-          "sh",
-          "-c"
-        ],
+        "entryPoint": null,
         "portMappings": [
           {
             "hostPort": 80,
@@ -25,9 +22,7 @@
             "containerPort": 80
           }
         ],
-        "command": [
-          "/bin/sh -c \"echo '<html> <head> <title>Amazon ECS Sample App</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h1>Amazon ECS Sample App</h1> <h2>Congratulations!</h2> <p>Your application is now running on a container in Amazon ECS.</p> </div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
-        ],
+        "command": null,
         "linuxParameters": null,
         "cpu": 256,
         "environment": [],
@@ -42,7 +37,7 @@
         "memoryReservation": 512,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "httpd:2.4",
+        "image": "507932962569.dkr.ecr.ap-northeast-2.amazonaws.com/kidsloop-test-robot:6c6aa90483e2d21f6dd1fceb9a76b442b81bed4a",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -50,7 +45,7 @@
         "interactive": null,
         "healthCheck": null,
         "essential": true,
-        "links": [],
+        "links": null,
         "hostname": null,
         "extraHosts": null,
         "pseudoTerminal": null,
@@ -69,7 +64,7 @@
       "EC2",
       "FARGATE"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:507932962569:task-definition/robot-calculate:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:507932962569:task-definition/robot-calculate:6",
     "family": "robot-calculate",
     "requiresAttributes": [
       {
@@ -88,6 +83,12 @@
         "targetId": null,
         "targetType": null,
         "value": null,
+        "name": "com.amazonaws.ecs.capability.ecr-auth"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
         "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
       },
       {
@@ -95,6 +96,12 @@
         "targetType": null,
         "value": null,
         "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "ecs.capability.execution-role-ecr-pull"
       },
       {
         "targetId": null,
@@ -116,7 +123,7 @@
     "networkMode": "awsvpc",
     "runtimePlatform": null,
     "cpu": "256",
-    "revision": 1,
+    "revision": 6,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
